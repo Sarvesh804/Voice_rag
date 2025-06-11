@@ -61,8 +61,8 @@ def run_voice_pipeline():
         config=config
     )
 
-    # audio_path = record_audio(duration=10)
-    audio_path = "D:\Voice_rag\\voice_processor\\audio-samples\mic.wav"
+    audio_path = record_audio(duration=10)
+    # audio_path = "\\voice_processor\\audio-samples\mic.wav"
     if not audio_path:
         print("❌ Failed to record audio. Exiting.")
     chunks = processor.preprocessor.preprocess(audio_path)

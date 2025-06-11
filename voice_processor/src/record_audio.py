@@ -2,7 +2,7 @@ import sounddevice as sd
 from scipy.io.wavfile import write
 import os
 
-def record_audio(filename="D:\Voice_rag\\voice_processor\\audio-samples\mic_input.wav", duration=10, sample_rate=16000):
+def record_audio(filename="voice_processor\\audio-samples\mic_input.wav", duration=10, sample_rate=16000):
     print(f"🎙️ Recording for {duration} seconds...")
 
     try:
