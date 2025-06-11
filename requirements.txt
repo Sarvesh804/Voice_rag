@@ -3,8 +3,10 @@ torch
 librosa
 numpy
 soundfile
+sounddevice
 psutil
 transformers
+typing
 
 
 
