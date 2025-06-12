@@ -2,7 +2,7 @@ whisper
 torch
 librosa
 numpy
-audiorecorder
+streamlit-audiorecorder
 transformers
 typing
 
