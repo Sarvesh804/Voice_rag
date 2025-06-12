@@ -6,7 +6,6 @@ import os
 from google import genai
 from dotenv import load_dotenv
 from google.genai import types
-from voice_processor.src.record_audio import record_audio
 
 
 
@@ -45,7 +44,8 @@ def analyze_sentiment(text):
         return {"label": "NEUTRAL", "score": 0.0}
     
 
-def run_voice_pipeline():
+def run_voice_pipeline(audio_path):
+
     start = time.time()
     config = AudioConfig(
         sample_rate=16000,
@@ -61,7 +61,7 @@ def run_voice_pipeline():
         config=config
     )
 
-    audio_path = record_audio(duration=10)
+    
     # audio_path = "\\voice_processor\\audio-samples\mic.wav"
     if not audio_path:
         print("❌ Failed to record audio. Exiting.")

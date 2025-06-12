@@ -6,8 +6,7 @@ from voice_output.emotion_detector import EmotionDetector
 from voice_output.tts_engine import TextToSpeechEngine
 from google import genai
 from google.genai import types
-import os 
-import asyncio      
+import os      
 
 
 from dotenv import load_dotenv

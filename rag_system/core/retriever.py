@@ -1,5 +1,4 @@
 from typing import List, Dict
-from sentence_transformers import CrossEncoder
 from rag_system.configs.retrieval_config import RetrievalConfig
 from rag_system.core.vector_store import VectorStore
 
@@ -10,6 +9,7 @@ class Retriever:
         self.reranker = None
 
         if config.rerank:
+            from sentence_transformers import CrossEncoder
             self.reranker = CrossEncoder(config.reranker_model)
 
     def retrieve(self, query: str) -> List[Dict]:

@@ -2,7 +2,6 @@ from voice_processor.src.config import AudioConfig
 from voice_processor.src.preprocessing import AudioPreprocessor
 from voice_processor.src.transcriber import WhisperTranscriber
 import gc
-import psutil
 
 
 class VoiceInputProcessor:

@@ -1,7 +1,5 @@
 import os
 from typing import List
-from sentence_transformers import SentenceTransformer
-from transformers import AutoTokenizer, AutoModel
 from rag_system.configs.embedding_config import EmbeddingConfig
 
 class EmbeddingModel:
@@ -12,6 +10,7 @@ class EmbeddingModel:
             self.client = openai
             self.model_name = config.openai_model
         else:
+            from sentence_transformers import SentenceTransformer
             self.model = SentenceTransformer(config.local_model_name)
             self.model.to(config.device)
 

@@ -2,9 +2,7 @@ whisper
 torch
 librosa
 numpy
-soundfile
-sounddevice
-psutil
+audiorecorder
 transformers
 typing
 

@@ -1,7 +1,8 @@
-from transformers import pipeline
+
 
 class EmotionDetector:
     def __init__(self):
+        from transformers import pipeline
         self.classifier = pipeline("text-classification", model="nateraw/bert-base-uncased-emotion")
 
     def detect_emotion(self, text: str) -> str:

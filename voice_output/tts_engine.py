@@ -1,4 +1,3 @@
-import asyncio
 import edge_tts
 
 class TextToSpeechEngine:
