@@ -2,8 +2,7 @@ import streamlit as st
 import os
 import asyncio
 import numpy as np
-import soundfile as sf
-from audiorecorder import audiorecorder
+from st_audiorec import st_audiorec
 
 from voice_processor.main import run_voice_pipeline
 from rag_system.system.rag import RAGSystem
@@ -39,21 +38,16 @@ sentiment = ""
 
 if query_type == "🗣️ Voice":
     st.markdown("#### 🎙️ Record Your Query")
-    audio = audiorecorder("Start Recording", "Stop Recording")
+    audio_bytes = st_audiorec()
 
-    if len(audio) > 0:
+    if audio_bytes:
         os.makedirs("voice_processor/audio-samples", exist_ok=True)
         audio_path = "voice_processor/audio-samples/mic_input.wav"
 
-        # Convert audio to numpy array and save using soundfile
-        samples = np.array(audio.get_array_of_samples())
-        channels = audio.channels
-        samples = samples.reshape((-1, channels)) if channels > 1 else samples
-
-        sf.write(audio_path, samples, audio.frame_rate, format='WAV')
+        with open(audio_path, "wb") as f:
+            f.write(audio_bytes)
         st.audio(audio_path, format="audio/wav")
         st.success("✅ Voice recorded. Processing...")
-
         result = run_voice_pipeline(audio_path)
         query = result["query"]
         sentiment = result["sentiment"]["label"] if result["sentiment"] else "neutral"
