@@ -17,6 +17,7 @@ python-dotenv
 sentence_transformers
 langchain
 langchain_community
+faiss-cpu
 tiktoken 
 pdfminer.six
 
