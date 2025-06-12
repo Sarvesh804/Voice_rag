@@ -12,7 +12,7 @@ class EmbeddingModel:
         else:
             from sentence_transformers import SentenceTransformer
             self.model = SentenceTransformer(config.local_model_name)
-            self.model.to(config.device)
+           
 
     def embed_texts(self, texts: List[str]) -> List[List[float]]:
         if self.config.use_openai:
