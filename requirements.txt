@@ -18,6 +18,7 @@ sentence_transformers
 langchain
 langchain_community
 faiss-cpu
+pymupdf
 tiktoken 
 pdfminer.six
 
