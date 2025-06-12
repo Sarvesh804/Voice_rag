@@ -22,10 +22,7 @@ def ask_query(query,sentiment):
         retrieval_config=RetrievalConfig()
     )
 
-    # Build index if not already
-    # rag.build_knowledge_base("rag_system/data/knowledge")
-
-    # Or load existing
+    rag.build_knowledge_base("rag_system/data/knowledge")
     rag.load_knowledge_base()
 
     emotion_detector = EmotionDetector()

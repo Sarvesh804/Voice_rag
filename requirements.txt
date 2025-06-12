@@ -3,6 +3,7 @@ torch
 librosa
 numpy
 streamlit-audiorecorder
+soundfile
 transformers
 typing
 

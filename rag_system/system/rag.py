@@ -22,9 +22,9 @@ class RAGSystem:
     def build_knowledge_base(self, data_dir: str):
         print("📚 Loading & chunking documents...")
         chunks = self.doc_processor.process(data_dir)
-        for i, chunk in enumerate(chunks[:10]):
-            print(f"\n🧩 Chunk {i + 1}:\n{chunk['content'] if isinstance(chunk, dict) else chunk.page_content}")
-        print(f"🧠 Embedding & indexing {len(chunks)} chunks...")
+        # for i, chunk in enumerate(chunks[:10]):
+        #     print(f"\n🧩 Chunk {i + 1}:\n{chunk['content'] if isinstance(chunk, dict) else chunk.page_content}")
+        # print(f"🧠 Embedding & indexing {len(chunks)} chunks...")
         self.vector_store.build(chunks)
         self.vector_store.save()
 
