@@ -1,6 +1,5 @@
 whisper
-torch==2.1.2
-sentence-transformers==2.2.2
+torch
 librosa
 numpy
 streamlit-audiorec
@@ -15,6 +14,7 @@ python-dotenv
 
 
 
+sentence_transformers
 langchain
 langchain_community
 faiss-cpu

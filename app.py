@@ -12,7 +12,6 @@ from rag_system.configs.retrieval_config import RetrievalConfig
 from main import ask_query
 
 
-os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 
 
 # ----------------- Streamlit UI Setup -----------------
