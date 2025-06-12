@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 import asyncio
-import numpy as np
 from st_audiorec import st_audiorec
 
 from voice_processor.main import run_voice_pipeline
@@ -11,6 +10,10 @@ from rag_system.configs.chunking_config import ChunkingConfig
 from rag_system.configs.embedding_config import EmbeddingConfig
 from rag_system.configs.retrieval_config import RetrievalConfig
 from main import ask_query
+
+
+os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+
 
 # ----------------- Streamlit UI Setup -----------------
 st.set_page_config(page_title="Voice RAG Assistant", layout="wide")
@@ -66,6 +69,10 @@ if query:
     # ----------------- TTS -----------------
     tts = TextToSpeechEngine()
     output_path = "voice_output/output/output.wav"
-    asyncio.run(tts.speak(answer, output_file=output_path))
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(tts.speak(answer, output_file=output_path))
+
     st.audio(output_path, format="audio/wav")
 

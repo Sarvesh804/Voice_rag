@@ -1,4 +1,3 @@
-import os
 from typing import List
 from rag_system.configs.embedding_config import EmbeddingConfig
 
