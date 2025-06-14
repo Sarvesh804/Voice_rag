@@ -80,8 +80,8 @@ def run_voice_pipeline(audio_path):
     segments = [s for r in results for s in r.get("segments", [])]
 
 
-    cleaned_text = " ".join(all_text)
-    # cleaned_text = clean_transcription(combined_text)
+    combined_text = " ".join(all_text)
+    cleaned_text = clean_transcription(combined_text)
     confidence = processor.calculate_confidence(segments)
     sentiment = analyze_sentiment(cleaned_text)
     duration = time.time() - start
