@@ -3,7 +3,7 @@
 ### Run clone command
 ```
 
-git clone 
+git clone https://github.com/Sarvesh804/Voice_rag.git
 
 ```
 
